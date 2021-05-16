@@ -16,7 +16,6 @@ $(function () {
     element.style = "scroll-behavior: auto";
     element.scrollTop = element.scrollHeight;
 
-    //make connection
     let socket = io.connect('http://localhost:3000')
 
     let username = $('.myUsername').attr("data-username");
@@ -25,14 +24,12 @@ $(function () {
     socket.emit('change_username', {username});
     socket.emit('user_room', {username, friendUsername});
 
-    //buttons and inputs
     let message = $("#message")
     let send_message = $("#send_message")
     let chatroom = $("#chatroom")
     let typing = $("#typing")
     let typing_div = $(".typing-div");
 
-    //Emit message
     send_message.click(function () {
         if (message.val() !== '') {
             send.play().then(m => {
@@ -46,7 +43,6 @@ $(function () {
         return message.replace(/</g, "&lt");
     }
 
-    //Listen on new_message
     socket.on("new_message", (data) => {
         socket.emit('not typing')
         message.val('');
@@ -90,7 +86,6 @@ $(function () {
     })
 
     let isTyping = false;
-    //Listen on typing
     socket.on('typing', (data) => {
         if (!isTyping) {
             on_typing.play().then(m => {
