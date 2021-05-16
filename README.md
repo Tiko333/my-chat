@@ -15,31 +15,31 @@ To run the application you need to
 git clone https://github.com/Tiko333/my-chat.git
 ```
 
-1. Install dependences 
+2. Install dependences 
 
 ```bash
 npm install 
 ```
 
-2. Add environment variable
+3. Add environment variable
 
 ```bash
 export NODE_ENV=development 
 ```
 
-3. Add in .env jwt secret key
+4. Add in .env jwt secret key
 
 ```bash
 JWT_SECRET_KEY=
 ```
 
-4. Run the application (need NODE_ENV=development) 
+5. Run the application (need NODE_ENV=development) 
 
 ```bash
 npm start
 ```
 
-5. Run the application in dev mode
+6. Run the application in dev mode
 
 ```bash
 npm run dev
