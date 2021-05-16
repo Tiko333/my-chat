@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>Simple Chat App</title>
+</head>
+
+<body>
+<div class="main-block">
+    <header class="myUsername" data-username="<%= username %>" data-friendUsername="<%= friendUsername %>">
+        <h1 class="title">My Chat</h1>
+<!--        <h1 class="us"><%= username %></h1>-->
+        <h1 class="us"><%= username.length > 45 ? `${username.toString().substring(0, 45)}...` : username  %></h1>
+    </header>
+
+<!--    <h2 class="un">To: <%= friendUsername %></h2>-->
+    <h2 class="un">To: <%= friendUsername.length > 45 ? `${friendUsername.toString().substring(0, 45)}...` : friendUsername  %></h2>
+    <div class="typing-div"><span id="typing"></span></div>
+    <section id="chatroom">
+        <% for (var i = 0; i < messages.length;  i++ ) { %>
+            <div class="outer"> <div class="<%=username === messages[i].username ? 'mes-div me' : 'mes-div'%>"><span class='sp'><%= messages[i].message %></span></div></div>
+            <br><br>
+        <% } %>
+    </section>
+
+    <section id="input_zone">
+        <textarea id="message"></textarea>
+        <button id="send_message" type="button"></button>
+    </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>

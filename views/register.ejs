@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="register.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>Simple Chat App</title>
+  </head>
+
+  <body>
+
+    <div class="main-block">
+
+      <h1>Sign up</h1><br>
+
+
+      <section class="login-section">
+        <form class="form" method="post" action="/register">
+
+          <%  if (usernameError.length > 0) { %>
+            <style>
+              #username::placeholder { /* Firefox, Chrome, Opera */
+                color: red;
+              }
+              #username:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: red;
+              }
+              #username::-ms-input-placeholder { /* Microsoft Edge */
+                color: red;
+              }
+            </style>
+            <input id="username" type="text" name="username" required="required" placeholder="<%= usernameError %>" />
+          <% } else{ %>
+              <input id="username" type="text" name="username" required="required" placeholder="username"/>
+          <% } %>
+
+
+          <%  if (emailError.length > 0) { %>
+            <style>
+              #email::placeholder { /* Firefox, Chrome, Opera */
+                color: red;
+              }
+              #email:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: red;
+              }
+              #email::-ms-input-placeholder { /* Microsoft Edge */
+                color: red;
+              }
+            </style>
+            <input id="email" type="email" name="email" required="required" placeholder="<%= emailError %>" />
+          <% } else{ %>
+            <input id="email" type="email" name="email" required="required" placeholder="email"/>
+          <% } %>
+
+          <input id="password" type="password" name="password" required="required" placeholder="password"/>
+
+          <button type="submit">Sign up</button>
+          <button><a href="/login">Sign in</a></button>
+
+        </form>
+      </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="chat.js"></script>
+  </body>
+</html>

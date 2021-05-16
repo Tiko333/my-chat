@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="friends.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>Simple Chat App</title>
+</head>
+
+<body>
+
+
+<div class="main-block">
+
+    <h1 class="title">Friends list</h1><br>
+
+    <H1 class="unn"><%= username.length > 10 ? `${username.toString().substring(0, 10)}...` : username %></H1>
+    <span class="unspan"><%= username%></span>
+
+    <section class="friends-section">
+        <div class="main-block">
+            <div class="list" data-username="<%= username %>">
+                <input id="username" type="text" name="username" required="required" placeholder="username">
+                <button id="user-search">Search</button>
+                <button id="my-fl-button">Friends</button>
+
+                <div class="fl"></div>
+                <div class="my-fl"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<form style="display: none" action="/index" method="GET" id="form">
+    <input type="hidden" id="my-username" name="username" value=""/>
+    <input type="hidden" id="friend-username" name="friendUsername" value=""/>
+    <input type="hidden" id="friend" name="friend" value=""/>
+    <input type="hidden" id="token" name="token" value=""/>
+</form>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

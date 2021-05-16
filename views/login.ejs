@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>Simple Chat App</title>
+</head>
+
+<body>
+
+
+<div class="main-block">
+
+    <h1>Sign in</h1><br>
+
+
+    <section class="login-section">
+        <form class="form" method="POST" action="/login">
+
+            <% if (emailError.length > 0) { %>
+            <style>
+                #email::placeholder { /* Firefox, Chrome, Opera */
+                    color: red;
+                }
+
+                #email:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: red;
+                }
+
+                #email::-ms-input-placeholder { /* Microsoft Edge */
+                    color: red;
+                }
+            </style>
+            <input id="email" type="email" name="email" required="required" placeholder="<%= emailError %>"/>
+            <input id="password" type="password" name="password" required="required" placeholder="password"/>
+            <% } else{ %>
+
+                <% if (email.length > 0) { %>
+                    <input id="email" type="email" name="email" required="required" value="<%= email %>"/>
+                <% } else{ %>
+                    <input id="email" type="email" name="email" required="required" placeholder="email"/>
+                <% } %>
+
+                <% if (passwordError.length > 0) { %>
+                    <style>w
+                        #password::placeholder { /* Firefox, Chrome, Opera */
+                            color: red;
+                        }
+
+                        #password:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                            color: red;
+                        }
+
+                        #password::-ms-input-placeholder { /* Microsoft Edge */
+                            color: red;
+                        }
+                    </style>
+                    <input id="password" type="password" name="password" required="required"
+                           placeholder="<%= passwordError %>"/>
+                <% } else{ %>
+                    <input id="password" type="password" name="password" required="required" placeholder="password"/>
+                <% } %>
+
+            <% } %>
+
+            <button type="submit">Sign in</button>
+            <button><a href="/register">Sign up</a></button>
+        </form>
+    </section>
+</div>
+
+</body>
+</html>
