@@ -21,7 +21,7 @@
     <div class="typing-div"><span id="typing"></span></div>
     <section id="chatroom">
         <% for (var i = 0; i < messages.length;  i++ ) { %>
-            <div class="outer"> <div class="<%=username === messages[i].username ? 'mes-div me' : 'mes-div'%>"><span class='sp'><%= messages[i].message %></span></div></div>
+            <div class="outer"> <div class="<%=username === messages[i].username ? 'mes-div me' : 'mes-div fr'%>"><span class='sp'><%= messages[i].message %></span></div></div>
             <br><br>
         <% } %>
     </section>

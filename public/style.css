@@ -119,6 +119,10 @@ div.me {
     background-color: #41A8FF;
 }
 
+.fr {
+    overflow-wrap: break-word;
+}
+
 .us {
     text-align: center;
     position: relative;

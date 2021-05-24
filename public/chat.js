@@ -65,13 +65,13 @@ $(function () {
         } else {
             // Replace < with &lt; and > with &gt;
             if (data.message.includes('<') || data.message.includes('>')) {
-                chatroom.append(`<div class="mes-div"><span class='sp'>${replace(data.message)}</span></div><br><br>`)
+                chatroom.append(`<div class="mes-div fr"><span class='sp'>${replace(data.message)}</span></div><br><br>`)
                 changeColors();
                 new_message.play().then(m => {
                     console.log(m)
                 });
             } else {
-                chatroom.append(`<div class="mes-div"><span class='sp'>${data.message}</span></div><br><br>`)
+                chatroom.append(`<div class="mes-div fr"><span class='sp'>${data.message}</span></div><br><br>`)
                 changeColors();
                 new_message.play().then(m => {
                     console.log(m)
